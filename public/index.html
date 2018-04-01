@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>api</title>
+    <title>sust-api</title>
 </head>
 <body>
-    <h1>assignment</h1>
+    <h1>Api that handles CRUD Uperations</h1>
+    <br>
+    <br>
+    <div>
+        <h3>1. GET REQUEST</h3>
+        <h2>Method-GET</h2>
+       <h4>[A] End Point="https://sust-api.herokuapp.com/api/users"</h4>
+    <h4>This will list all the users present in database</h4>
+
+    <h4>[B] End Point="https://sust-api.herokuapp.com/api/users?page=1&limit=10&name=James&sort=age
+        "</h4>
+        <ul>
+            <li>page - a number for pagination</li>
+            <li>
+                limit - no. of items to be return, default limit is 5
+
+            </li>
+            <li>
+                name - search user by name as substring in First Name or Last Name (Note, use substring matching algorithm/pattern to match the name)
+
+            </li>
+            <li>
+                Sort - name of attribute, the items to be sort. By default it returns items in ascending order if  this parameter exist, and if value of parameter is prefix with ‘-’ character, then it should return item in descending order
+            </li>
+        </ul>
+       
+    </div>
+    <hr>
+    <div>
+        <h3>2. POST REQUEST</h3>
+        <h2>Method-POST</h2>
+        <h2>Request Payload should be like in json format</h2>
+       <h4> End Point="https://sust-api.herokuapp.com/api/users"</h4>
+    <h4> Request Body</h4>
+        <img src="./post.png">
+    </div>
+    <hr>
+    <div>
+        <h3>3. PUT REQUEST</h3>
+        <h2>Method-PUT</h2>
+        <h2>Request Payload should be like in json format for updating first name, last name and age for user with id=1 passed as query string</h2>
+       <h4> End Point="https://sust-api.herokuapp.com/api/users?id=1"</h4>
+    <h4> Request Body</h4>
+        <img src="./put.jpeg">
+    </div>
+<hr>
+    <div>
+        <h3>4. DELETE REQUEST</h3>
+        <h2>Method-DELETE</h2>
+        <h2>Request Payload should be like in json format for updating first name, last name and age for user with id=1 passed as query string</h2>
+       <h4> End Point="https://sust-api.herokuapp.com/api/users?id=1"</h4>
+    <h4> This will delete the user with Id=1</h4>
+        
+    </div>
+   
 </body>
 </html>
