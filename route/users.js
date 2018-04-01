@@ -89,11 +89,25 @@ router.get("/users", (req, res) => {
     
         });
     }
-    if(!parsedQs.name)
+    if(!parsedQs.name && !parsedQs.id)
     {
         userModel.find({},(err,data)=>
             {
                 res.status(200).json(data);
+                
+            });
+    }
+    if(parsedQs.id)
+    {
+        userModel.findOne({id:parsedQs.id},(err,data)=>
+           
+        {
+            if(data)
+                res.status(200).json(data);
+                else if(!data)
+                {
+                    res.status(200).json({"data":"user not found"});
+                }
                 
             });
     }
